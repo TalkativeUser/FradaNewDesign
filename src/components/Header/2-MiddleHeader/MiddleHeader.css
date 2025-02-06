@@ -1,0 +1,10 @@
+/* Start Middle Navbar */
+.header-nav {
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+  }
+  .header-nav .container{
+    width:100% !important
+  }
+  /* End Middle Navbar */

@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Ga+Maamli&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Mingzat&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Cairo", serif!important ;
+  font-optical-sizing: auto;
+
+}
+@media only screen and (min-width: 440px) {
+  .home-2 {
+    display: none !important;
+  }
+}
+.carousel-2 .slick-track {
+  padding-block: 20px !important;
+}
+:root {
+  --secondColor: #f2f2f2;
+  --blackColor: #000;
+  --whiteColor: #fff;
+  --mainColor: #D07A51;
+  
+}
+html body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #e0e0e0;
+}
+body::-webkit-scrollbar-thumb {
+  background: #000;
+}
+a {
+  text-decoration: none !important;
+  color: var(--blackColor);
+}
+.not-found-container {
+  height: 85vh;
+  width: 100%;
+  position: relative;
+}
+.not-found-container .home-btn {
+  background-color: var(--mainColor);
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border: 1px solid var(--mainColor);
+  border-radius: 8px;
+  color: var(--whiteColor);
+}
+
+.carousel-2 .card {
+  height: 150px !important;
+  width: 100%;
+}
+.carousel-2 .slick-track {
+  padding-block: 66px !important;
+}
+
+.carousel-2 .slick-dots {
+  bottom: 15px !important;
+}
+/*  */
+
+.carousel-1 .slick-initialized .slick-slide {
+  margin-block: 0px !important;
+  padding: 0px !important;
+}
+
+@media (min-width: 1500px) {
+  .lg\:p-20 {
+    padding-inline: 20rem !important;
+  }
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px !important;
+}
+
+.carousel-2 .slick-slide {
+  padding-inline: 10px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 13px !important;
+}
+
+@media (max-width: 1023px) {
+  .cards.slick-slider .slick-track {
+    padding-block: 0px !important;
+  }
+  .carousel-2 {
+    background: white;
+    border: none;
+    box-shadow: none;
+    margin-top: 0px !important;
+    margin-bottom: 40px !important;
+  }
+  .carousel-2 .card {
+    background: black !important;
+  }
+  .carousel-2 .shopping {
+    background: white;
+    color: black;
+  }
+  .carousel-2 .btn-container {
+    justify-content: flex-end;
+  }
+
+  .carousel-2 .slick-dots {
+    bottom: -40px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-2 .card {
+    min-height: 210px !important;
+  }
+}
+/* ===============================================================>Start Error Page Style<======================================================== */
+.error-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.error-container .error-text {
+  font-size: 20px;
+}
+.error-container .links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.error-container .links div {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+  cursor: pointer;
+}
+/* ===============================================================>Start Error Page Style<======================================================== */
+/* ===============================================================>Start Loading Style<======================================================== */
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 999999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading .loading-container {
+  position: relative;
+}
+.loading .loading-container svg {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 17%;
+  right: 13%;
+}
+.loading .loader {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loading .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .loading .loading-container svg {
+    width: 65px;
+    height: 65px;
+    top: 23%;
+    right: 23%;
+  }
+  .loading .loader,
+  .loading .loader::after {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* ===============================================================>End Loading Style<==========================================================*/

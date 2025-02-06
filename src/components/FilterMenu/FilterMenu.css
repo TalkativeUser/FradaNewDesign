@@ -1,0 +1,186 @@
+aside {
+  top: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow-y: auto;
+  background-color: #fff;
+  scrollbar-color: rgba(17, 17, 17, 0.7) transparent;
+  scrollbar-width: thin;
+  position: relative;
+  height: calc(100vh - 100px);
+}
+aside .close-icon {
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  font-size: 35px;
+  display: none;
+}
+aside .filter-content .offers-container,
+aside .filter-content .sort-container,
+aside .filter-content .discounts-container,
+aside .filter-content .tradmarks-container,
+aside .filter-content .sizes-container,
+aside .filter-content .colors-container,
+aside .filter-content .price-container {
+  text-align: end;
+  padding: 14px 10px;
+  border-top: 2px solid gray;
+}
+aside .filter-content .sort-container {
+  display: none;
+}
+aside .filter-content .sort-container {
+  border: none;
+}
+@media screen and (min-width: 992px) {
+  aside .filter-content .offers-container{
+    border: none;
+  }
+  aside .filter-content .discounts-container {
+    border-top: 2px solid gray;
+  }
+}
+aside .filter-content .offers-container h6,
+aside .filter-content .sort-container h6,
+aside .filter-content .discounts-container h6,
+aside .filter-content .tradmarks-container h6,
+aside .filter-content .sizes-container h6,
+aside .filter-content .colors-container h6,
+aside .filter-content .price-container h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.filter .filter-content .offers-container .offers .offer,
+.filter .filter-content .sort-container .sort-items .single-sort-item,
+.filter .filter-content .tradmarks-container .tradmarks .tradmark,
+.filter .filter-content .price-container .price-items .single-price-item{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+aside .filter-content .offers-container .offer,
+.filter .filter-content .sort-container .single-sort-item,
+input,
+.filter .filter-content .offers-container .price-items .single-price-item,
+.filter .filter-content .tradmarks-container .tradmarks .tradmark input {
+  margin-top: 7px;
+}
+
+.filter .filter-content .offers-container .offer label,
+.filter .filter-content .sort-container .single-sort-item label,
+.filter .filter-content .offers-container .price-items .single-price-item label,
+.filter .filter-content .tradmarks-container .tradmarks .tradmark label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.filter .filter-content .discounts-container select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 18px;
+  border: 1px solid #000;
+}
+
+aside .filter-content .sizes-container .sizes,
+.filter .filter-content .colors-container .colors {
+  grid-template-columns: repeat(auto-fill, minmax(40px, auto));
+  gap: 20px;
+  direction: rtl;
+  cursor: pointer;
+  text-align: center;
+}
+aside .filter-content .sizes-container .sizes {
+  justify-content: space-between;
+}
+
+.filter .filter-content .sizes-container .sizes .size {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter .filter-content .sizes-container .sizes .size:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.filter .filter-content .colors-container .colors .color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter .filter-content .colors-container .colors .color span {
+  font-weight: 700;
+  font-size: 15px;
+}
+/* duble slider */
+.range-slider {
+  background-color: #d3d3d3 !important;
+  height: 2px !important;
+}
+.range-slider__range {
+  /* CSS for range */
+  background-color: black !important;
+  height: 2px !important;
+}
+.range-slider__thumb {
+  /* CSS for thumbs */
+  width: 15px !important;
+  height: 15px !important;
+  background-color: black !important;
+}
+.range-slider__thumb[data-active] {
+  background-color: black !important;
+}
+.price-container .price-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.price-container .price-range div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+@media screen and (max-width: 992px) {
+  .filter-sort-bar {
+    position: static;
+  }
+  aside .filter-content .sort-container {
+    display: block;
+  }
+  aside .close-icon {
+    display: block;
+  }
+  .filter .filter-content .sizes-container .sizes {
+    justify-content: flex-start;
+  }
+}
