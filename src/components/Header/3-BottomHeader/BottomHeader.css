@@ -29,20 +29,32 @@
     transform: translateY(-2px);
   }
   
+/* ده السلوك الجديدالمسئول عن ال   hover  اللى استبدلناه خلاص */
+.listed {
+
+  position: relative;
+}
+
   .listed:hover .subcategory {
     display: block;
   }
   /* Start SubCategory Section */
   .subcategory {
-    background-color: #000;
+    /* background-color: #000; */
     padding-bottom: 50px;
     position: absolute;
-    right: 0;
-    left: 0;
-    top: 37px;
+    top: 100%;
+    padding: 10px;
+    width: 150px;
+    direction: rtl;
+    background-color: var(--white) ;
+    border-radius: 7px;
     display: none;
     z-index: 999999;
+    text-align: start;
   }
+
+
   
   .subcategory .img-container {
     position: relative;
@@ -210,6 +222,13 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+  }
+  @media (max-width : 1236px) {
+
+    .category-name p {
+      font-size: 19px;
+    }
+    
   }
   
   @media (max-width: 1200px) {

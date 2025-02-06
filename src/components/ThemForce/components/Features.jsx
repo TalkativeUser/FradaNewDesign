@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Features({ parentClass = "flat-spacing" }) {
   return (
-    <section className={parentClass}>
+    <section className={` ${parentClass} my-10 `}>
       <div className="container">
         <Swiper
           dir="rtl"

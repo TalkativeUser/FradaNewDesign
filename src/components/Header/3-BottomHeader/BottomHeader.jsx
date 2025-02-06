@@ -1,39 +1,29 @@
 "use client";
-import { Row, Col, Container } from "react-bootstrap";
 import Link from "next/link";
 import BottomLinks from "./BottomHeaderAtoms/BottomLinks";
-import cartIcon from "../../../../public/images/NavBar/cart-navBar.svg";
 import "./BottomHeader.css";
 import Image from "next/image";
-import SocialLinks from "@/components/utils/SocialLinks/SocialLinks";
 import { useMainContext } from "@/Context/MainContext";
 
 
 import "../2-MiddleHeader/MiddleHeader.css";
-import HeaderLogo from "../2-MiddleHeader/MiddleHeaderAtoms/HeaderLogo/HeaderLogo";
-import HeaderSearch from "../2-MiddleHeader/MiddleHeaderAtoms/HeaderSearch/HeaderSearch";
-import HeaderList from "../2-MiddleHeader/MiddleHeaderAtoms/HeaderList/HeaderList";
-import { useState } from "react";
-import SidebarMenu from "@/components/utils/SidebarMenu/SidebarMenu";
 
 
-const BottomHeader = ({ categories , token,  fullWidth=false }) => {
-    const [showSidebar,setShowSidebar]=useState(false);
+const BottomHeader = ({ categories,  fullWidth=false }) => {
     const { setShowSearcheLayer } = useMainContext();
 
-  const IMAGE_SRC = process.env.NEXT_PUBLIC_IMAGE_SRC;
   return (
      <>
       <header
       id="header"
-      className={`header-default ${fullWidth ? "header-fullwidth" : ""}  `}
+      className={`header-default ${fullWidth ? "header-fullwidth" : ""}   `}
     >
-      <div className={fullWidth ? "" : "container"}>
+      <div className={fullWidth ? "" : "container  "}>
 
 
         
-        <div className="row wrapper-header align-items-center justify-between ">
-          <div className="col-md-4 col-3 d-xl-none">
+        <div className="row wrapper-header align-items-center justify-between flex-row-reverse flex-xl-row   ">
+          <div className="col-md-4 col-3 flex justify-center rotate-180 d-xl-none">
             <a
               href="#mobileMenu"
               className="mobile-menu"
@@ -54,12 +44,11 @@ const BottomHeader = ({ categories , token,  fullWidth=false }) => {
               />
             </Link>
           </div>
-          <div className="col-xl-8 d-none d-xl-block">
-            <nav className="box-navigation text-center">
-              <ul className="box-nav-ul d-flex align-items-center justify-content-center nav-list">
-                {/* <Nav /> */}
+          <div className="col-xl-8 d-none d-xl-block ">
+            <nav className="box-navigation text-center   ">
+              <ul className="box-nav-ul  d-flex align-items-center  py-0  justify-content-center nav-list">
               {categories?.collections_and_discounts && (
-                <li className="listed">
+                <li className="listed hello ">
                   <Link
                     href={`/collections`}
                     className="listed-desc text-inherit"
@@ -75,89 +64,28 @@ const BottomHeader = ({ categories , token,  fullWidth=false }) => {
                 <BottomLinks category={category} key={index} />
               ))}
 
-              {categories.length > 0 &&
+              {/* {categories.length > 0 &&
                 categories.map((category) => (
                   <li className="listed" key={category.CategoryID}>
                     {category.subcategories.length > 0 ? (
                       <div className="subcategory">
-                        <Container fluid>
-                          <Row>
-                            <Col md={{ span: 6 }} className="p-0">
-                              <div className="img-container">
-                                <img
-                                  loading="lazy"
-                                  src={`${IMAGE_SRC}/Category/${category.photo}`}
-                                  alt={category.Name}
-                                />
-                                <div className="layer"></div>
-                                <div className="content">
-                                  <p>
-                                    إكتشف أهم مستلزمات الرجال في العصر الحديث
-                                  </p>
-                                  <p>{category.Name}</p>
-                                  <Link
-                                    href={"category/" + category.CategoryID}
-                                    className="listed-desc text-inherit"
-                                  >
-                                    <button className="btn">
-                                      إكتشف المزيد
-                                    </button>
-                                  </Link>
-                                </div>
-                              </div>
-                            </Col>
-                            <Col md={{ span: 6 }} className="p-0">
-                              <div className="subcategory-content">
-                                <div className="subcategory-container">
-                                  {/* <ul className="group-list list-unstyled">
-                                    <li>أبرز المجموعات</li>
-                                    <li>مجموعات إيطاليه نادره</li>
-                                    <li>مجموعات إيطاليه نادره</li>
-                                  </ul> */}
-                                  <ul className="subcategory-list list-unstyled">
-                                    <li>
-                                      <Link
-                                        href={"category/" + category.Name}
-                                        className="listed-desc text-inherit"
-                                      >
-                                        <p>إظهار الكل</p>
-                                      </Link>
-                                    </li>
-                                    {category.subcategories.map(
-                                      (subcategory) => (
-                                        <li key={subcategory.SubcategoryID}>
-                                          <Link
-                                            href={
-                                              "category/" +
-                                              category.CategoryID +
-                                              "/subcategory/" +
-                                              subcategory.SubcategoryID
-                                            }
-                                            className="listed-desc text-inherit"
-                                          >
-                                            <p>{subcategory.Name}</p>
-                                          </Link>
-                                        </li>
-                                      )
-                                    )}
-                                  </ul>
-                                </div>
-                                <div className="social-links-container">
-                                  <SocialLinks text="تابعنا علي مواقع التواصل الإجتماعي" />
-                                </div>
-                              </div>
-                            </Col>
-                          </Row>
-                        </Container>
+                        
+                        <ul>
+
+
+                          
+                        </ul>
+                              
+
                       </div>
                     ) : null}
                   </li>
-                ))}
+                ))} */}
                 
               </ul>
             </nav>
           </div>
-          <div className="col-xl-2 col-md-4 col-3">
+          <div className="col-xl-2 col-md-4 col-3 flex justify-center ">
             <ul className="nav-icon d-flex justify-content-end align-items-center">
               <li className="nav-search"  onClick={()=>setShowSearcheLayer(true)}  >
                 <a
@@ -191,7 +119,7 @@ const BottomHeader = ({ categories , token,  fullWidth=false }) => {
                 </a>
               </li>
               <li className="nav-account">
-                <a href="#" className="nav-icon-item">
+                <a href="" className="nav-icon-item">
                   <svg
                     className="icon"
                     width={24}
@@ -252,31 +180,30 @@ const BottomHeader = ({ categories , token,  fullWidth=false }) => {
                 </Link>
               </li>
               <li className="nav-cart">
-                <Link
-                  href="/cart"
-                  data-bs-toggle="modal"
-                  className="nav-icon-item"
-                >
-                  <svg
-                    className="icon"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.5078 10.8734V6.36686C16.5078 5.17166 16.033 4.02541 15.1879 3.18028C14.3428 2.33514 13.1965 1.86035 12.0013 1.86035C10.8061 1.86035 9.65985 2.33514 8.81472 3.18028C7.96958 4.02541 7.49479 5.17166 7.49479 6.36686V10.8734M4.11491 8.62012H19.8877L21.0143 22.1396H2.98828L4.11491 8.62012Z"
-                      stroke="#181818"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="count-box">
-<span>3</span>
-                  </span>
-                </Link>
+              
+               <Link href="/cart" className="nav-icon-item" data-bs-toggle="modal">
+                    <svg
+                      className="icon"
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.5078 10.8734V6.36686C16.5078 5.17166 16.033 4.02541 15.1879 3.18028C14.3428 2.33514 13.1965 1.86035 12.0013 1.86035C10.8061 1.86035 9.65985 2.33514 8.81472 3.18028C7.96958 4.02541 7.49479 5.17166 7.49479 6.36686V10.8734M4.11491 8.62012H19.8877L21.0143 22.1396H2.98828L4.11491 8.62012Z"
+                        stroke="#181818"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="count-box">
+                      <span>3</span>
+                    </span>
+                  </Link>
+
+
               </li>
             </ul>
           </div>
@@ -286,40 +213,6 @@ const BottomHeader = ({ categories , token,  fullWidth=false }) => {
 
    
 
-    <section className="header-nav">
-      <Container>
-        <Row>
-          <Col md={{ span: 4 }} lg={{ span: 2 }}>
-            <HeaderLogo />
-          </Col>
-          <Col
-            xs={{ span: 11 }}
-            md={{ span: 6 }}
-            lg={{ span: 3 }}
-            xl={{ span: 4 }}
-            xxl={{ span: 5 }}
-          >
-            <HeaderSearch />
-          </Col>
-          <Col
-            xs={{ span: 1 }}
-            md={{ span: 2 }}
-            lg={{ span: 7 }}
-            xl={{ span: 6 }}
-            xxl={{ span: 5 }}
-          >
-            <HeaderList setShowSidebar={setShowSidebar} token={token}/>
-          </Col>
-        </Row>
-        {showSidebar && (
-          <SidebarMenu
-            categories={categories}
-            setShowSidebar={setShowSidebar}
-            token={token}
-          />
-        )}
-      </Container>
-    </section>
 
      </>
   );

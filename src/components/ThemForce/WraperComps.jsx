@@ -119,7 +119,7 @@ useEffect(() => {
     <div>
       <Hero />  
       <Collections />
-      <BannerCollection />
+      {/* <BannerCollection /> */}
       <Features />
     </div>
   )
